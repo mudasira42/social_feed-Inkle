@@ -1,0 +1,20 @@
+{
+    "success": true,
+    "message": "User profile retrieved",
+    "data": {
+        "_id": "692220ea7024307aa39c218d",
+        "username": "muda",
+        "email": "muda@gmail.com",
+        "fullName": "Mudasira Sultana",
+        "bio": "Hello world!",
+        "profilePicture": "https://via.placeholder.com/150",
+        "role": "USER",
+        "isActive": true,
+        "followersCount": 0,
+        "followingCount": 0,
+        "postsCount": 0,
+        "createdAt": "2025-11-22T20:45:30.159Z",
+        "updatedAt": "2025-11-22T20:45:30.159Z",
+        "__v": 0
+    }
+}
