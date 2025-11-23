@@ -1,0 +1,588 @@
+{
+  "info": {
+    "name": "Social Activity Feed API",
+    "schema": "https://schema.getpostman.com/json/collection/v2.1.0/collection.json",
+    "_postman_id": "social-feed-collection"
+  },
+  "item": [
+    {
+      "name": "Auth",
+      "item": [
+        {
+          "name": "Register",
+          "request": {
+            "method": "POST",
+            "header": [],
+            "url": {
+              "raw": "https://social-feed-inkle.onrender.com/api/auth/register",
+              "host": [
+                "https://social-feed-inkle.onrender.com/api/auth/register"
+              ]
+            },
+            "body": {
+              "mode": "raw",
+              "raw": "{\n  \"username\": \"test\",\n  \"email\": \"test@mail.com\",\n  \"password\": \"123456\",\n  \"fullName\": \"Test User\"\n}"
+            },
+            "auth": {
+              "type": "bearer",
+              "bearer": [
+                {
+                  "key": "token",
+                  "value": "<TOKEN>",
+                  "type": "string"
+                }
+              ]
+            }
+          }
+        },
+        {
+          "name": "Login",
+          "request": {
+            "method": "POST",
+            "header": [],
+            "url": {
+              "raw": "https://social-feed-inkle.onrender.com/api/auth/login",
+              "host": [
+                "https://social-feed-inkle.onrender.com/api/auth/login"
+              ]
+            },
+            "body": {
+              "mode": "raw",
+              "raw": "{\n  \"email\": \"test@mail.com\",\n  \"password\": \"123456\"\n}"
+            },
+            "auth": {
+              "type": "bearer",
+              "bearer": [
+                {
+                  "key": "token",
+                  "value": "<TOKEN>",
+                  "type": "string"
+                }
+              ]
+            }
+          }
+        },
+        {
+          "name": "Get Me",
+          "request": {
+            "method": "GET",
+            "header": [],
+            "url": {
+              "raw": "https://social-feed-inkle.onrender.com/api/auth/me",
+              "host": [
+                "https://social-feed-inkle.onrender.com/api/auth/me"
+              ]
+            },
+            "auth": {
+              "type": "bearer",
+              "bearer": [
+                {
+                  "key": "token",
+                  "value": "<TOKEN>",
+                  "type": "string"
+                }
+              ]
+            }
+          }
+        }
+      ]
+    },
+    {
+      "name": "Users",
+      "item": [
+        {
+          "name": "Get All Users",
+          "request": {
+            "method": "GET",
+            "header": [],
+            "url": {
+              "raw": "https://social-feed-inkle.onrender.com/api/users",
+              "host": [
+                "https://social-feed-inkle.onrender.com/api/users"
+              ]
+            },
+            "auth": {
+              "type": "bearer",
+              "bearer": [
+                {
+                  "key": "token",
+                  "value": "<TOKEN>",
+                  "type": "string"
+                }
+              ]
+            }
+          }
+        },
+        {
+          "name": "Update Profile",
+          "request": {
+            "method": "PUT",
+            "header": [],
+            "url": {
+              "raw": "https://social-feed-inkle.onrender.com/api/users/profile",
+              "host": [
+                "https://social-feed-inkle.onrender.com/api/users/profile"
+              ]
+            },
+            "body": {
+              "mode": "raw",
+              "raw": "{\n  \"fullName\": \"Updated Name\",\n  \"bio\": \"Updated bio\"\n}"
+            },
+            "auth": {
+              "type": "bearer",
+              "bearer": [
+                {
+                  "key": "token",
+                  "value": "<TOKEN>",
+                  "type": "string"
+                }
+              ]
+            }
+          }
+        },
+        {
+          "name": "Get User Profile",
+          "request": {
+            "method": "GET",
+            "header": [],
+            "url": {
+              "raw": "https://social-feed-inkle.onrender.com/api/users/<USER_ID>",
+              "host": [
+                "https://social-feed-inkle.onrender.com/api/users/<USER_ID>"
+              ]
+            },
+            "auth": {
+              "type": "bearer",
+              "bearer": [
+                {
+                  "key": "token",
+                  "value": "<TOKEN>",
+                  "type": "string"
+                }
+              ]
+            }
+          }
+        },
+        {
+          "name": "Follow User",
+          "request": {
+            "method": "POST",
+            "header": [],
+            "url": {
+              "raw": "https://social-feed-inkle.onrender.com/api/users/<USER_ID>/follow",
+              "host": [
+                "https://social-feed-inkle.onrender.com/api/users/<USER_ID>/follow"
+              ]
+            },
+            "auth": {
+              "type": "bearer",
+              "bearer": [
+                {
+                  "key": "token",
+                  "value": "<TOKEN>",
+                  "type": "string"
+                }
+              ]
+            }
+          }
+        },
+        {
+          "name": "Unfollow User",
+          "request": {
+            "method": "DELETE",
+            "header": [],
+            "url": {
+              "raw": "https://social-feed-inkle.onrender.com/api/users/<USER_ID>/follow",
+              "host": [
+                "https://social-feed-inkle.onrender.com/api/users/<USER_ID>/follow"
+              ]
+            },
+            "auth": {
+              "type": "bearer",
+              "bearer": [
+                {
+                  "key": "token",
+                  "value": "<TOKEN>",
+                  "type": "string"
+                }
+              ]
+            }
+          }
+        },
+        {
+          "name": "Block User",
+          "request": {
+            "method": "POST",
+            "header": [],
+            "url": {
+              "raw": "https://social-feed-inkle.onrender.com/api/users/<USER_ID>/block",
+              "host": [
+                "https://social-feed-inkle.onrender.com/api/users/<USER_ID>/block"
+              ]
+            },
+            "auth": {
+              "type": "bearer",
+              "bearer": [
+                {
+                  "key": "token",
+                  "value": "<TOKEN>",
+                  "type": "string"
+                }
+              ]
+            }
+          }
+        },
+        {
+          "name": "Unblock User",
+          "request": {
+            "method": "DELETE",
+            "header": [],
+            "url": {
+              "raw": "https://social-feed-inkle.onrender.com/api/users/<USER_ID>/block",
+              "host": [
+                "https://social-feed-inkle.onrender.com/api/users/<USER_ID>/block"
+              ]
+            },
+            "auth": {
+              "type": "bearer",
+              "bearer": [
+                {
+                  "key": "token",
+                  "value": "<TOKEN>",
+                  "type": "string"
+                }
+              ]
+            }
+          }
+        }
+      ]
+    },
+    {
+      "name": "Posts",
+      "item": [
+        {
+          "name": "Create Post",
+          "request": {
+            "method": "POST",
+            "header": [],
+            "url": {
+              "raw": "https://social-feed-inkle.onrender.com/api/posts",
+              "host": [
+                "https://social-feed-inkle.onrender.com/api/posts"
+              ]
+            },
+            "body": {
+              "mode": "raw",
+              "raw": "{\n  \"content\": \"Hello world\"\n}"
+            },
+            "auth": {
+              "type": "bearer",
+              "bearer": [
+                {
+                  "key": "token",
+                  "value": "<TOKEN>",
+                  "type": "string"
+                }
+              ]
+            }
+          }
+        },
+        {
+          "name": "Get All Posts",
+          "request": {
+            "method": "GET",
+            "header": [],
+            "url": {
+              "raw": "https://social-feed-inkle.onrender.com/api/posts",
+              "host": [
+                "https://social-feed-inkle.onrender.com/api/posts"
+              ]
+            },
+            "auth": {
+              "type": "bearer",
+              "bearer": [
+                {
+                  "key": "token",
+                  "value": "<TOKEN>",
+                  "type": "string"
+                }
+              ]
+            }
+          }
+        },
+        {
+          "name": "Get Post",
+          "request": {
+            "method": "GET",
+            "header": [],
+            "url": {
+              "raw": "https://social-feed-inkle.onrender.com/api/posts/<POST_ID>",
+              "host": [
+                "https://social-feed-inkle.onrender.com/api/posts/<POST_ID>"
+              ]
+            },
+            "auth": {
+              "type": "bearer",
+              "bearer": [
+                {
+                  "key": "token",
+                  "value": "<TOKEN>",
+                  "type": "string"
+                }
+              ]
+            }
+          }
+        },
+        {
+          "name": "Delete Post",
+          "request": {
+            "method": "DELETE",
+            "header": [],
+            "url": {
+              "raw": "https://social-feed-inkle.onrender.com/api/posts/<POST_ID>",
+              "host": [
+                "https://social-feed-inkle.onrender.com/api/posts/<POST_ID>"
+              ]
+            },
+            "auth": {
+              "type": "bearer",
+              "bearer": [
+                {
+                  "key": "token",
+                  "value": "<TOKEN>",
+                  "type": "string"
+                }
+              ]
+            }
+          }
+        },
+        {
+          "name": "Like Post",
+          "request": {
+            "method": "POST",
+            "header": [],
+            "url": {
+              "raw": "https://social-feed-inkle.onrender.com/api/posts/<POST_ID>/like",
+              "host": [
+                "https://social-feed-inkle.onrender.com/api/posts/<POST_ID>/like"
+              ]
+            },
+            "auth": {
+              "type": "bearer",
+              "bearer": [
+                {
+                  "key": "token",
+                  "value": "<TOKEN>",
+                  "type": "string"
+                }
+              ]
+            }
+          }
+        },
+        {
+          "name": "Unlike Post",
+          "request": {
+            "method": "DELETE",
+            "header": [],
+            "url": {
+              "raw": "https://social-feed-inkle.onrender.com/api/posts/<POST_ID>/like",
+              "host": [
+                "https://social-feed-inkle.onrender.com/api/posts/<POST_ID>/like"
+              ]
+            },
+            "auth": {
+              "type": "bearer",
+              "bearer": [
+                {
+                  "key": "token",
+                  "value": "<TOKEN>",
+                  "type": "string"
+                }
+              ]
+            }
+          }
+        }
+      ]
+    },
+    {
+      "name": "Activities",
+      "item": [
+        {
+          "name": "Activity Wall",
+          "request": {
+            "method": "GET",
+            "header": [],
+            "url": {
+              "raw": "https://social-feed-inkle.onrender.com/api/activities",
+              "host": [
+                "https://social-feed-inkle.onrender.com/api/activities"
+              ]
+            },
+            "auth": {
+              "type": "bearer",
+              "bearer": [
+                {
+                  "key": "token",
+                  "value": "<TOKEN>",
+                  "type": "string"
+                }
+              ]
+            }
+          }
+        }
+      ]
+    },
+    {
+      "name": "Admin",
+      "item": [
+        {
+          "name": "Delete User",
+          "request": {
+            "method": "DELETE",
+            "header": [],
+            "url": {
+              "raw": "https://social-feed-inkle.onrender.com/api/admin/users/<USER_ID>",
+              "host": [
+                "https://social-feed-inkle.onrender.com/api/admin/users/<USER_ID>"
+              ]
+            },
+            "auth": {
+              "type": "bearer",
+              "bearer": [
+                {
+                  "key": "token",
+                  "value": "<TOKEN>",
+                  "type": "string"
+                }
+              ]
+            }
+          }
+        },
+        {
+          "name": "Delete Post",
+          "request": {
+            "method": "DELETE",
+            "header": [],
+            "url": {
+              "raw": "https://social-feed-inkle.onrender.com/api/admin/posts/<POST_ID>",
+              "host": [
+                "https://social-feed-inkle.onrender.com/api/admin/posts/<POST_ID>"
+              ]
+            },
+            "auth": {
+              "type": "bearer",
+              "bearer": [
+                {
+                  "key": "token",
+                  "value": "<TOKEN>",
+                  "type": "string"
+                }
+              ]
+            }
+          }
+        },
+        {
+          "name": "Delete Like",
+          "request": {
+            "method": "DELETE",
+            "header": [],
+            "url": {
+              "raw": "https://social-feed-inkle.onrender.com/api/admin/likes/<LIKE_ID>",
+              "host": [
+                "https://social-feed-inkle.onrender.com/api/admin/likes/<LIKE_ID>"
+              ]
+            },
+            "auth": {
+              "type": "bearer",
+              "bearer": [
+                {
+                  "key": "token",
+                  "value": "<TOKEN>",
+                  "type": "string"
+                }
+              ]
+            }
+          }
+        }
+      ]
+    },
+    {
+      "name": "Owner",
+      "item": [
+        {
+          "name": "Create Admin",
+          "request": {
+            "method": "POST",
+            "header": [],
+            "url": {
+              "raw": "https://social-feed-inkle.onrender.com/api/admin/create",
+              "host": [
+                "https://social-feed-inkle.onrender.com/api/admin/create"
+              ]
+            },
+            "body": {
+              "mode": "raw",
+              "raw": "{\n  \"email\": \"admin@mail.com\"\n}"
+            },
+            "auth": {
+              "type": "bearer",
+              "bearer": [
+                {
+                  "key": "token",
+                  "value": "<TOKEN>",
+                  "type": "string"
+                }
+              ]
+            }
+          }
+        },
+        {
+          "name": "Delete Admin",
+          "request": {
+            "method": "DELETE",
+            "header": [],
+            "url": {
+              "raw": "https://social-feed-inkle.onrender.com/api/admin/<ADMIN_ID>",
+              "host": [
+                "https://social-feed-inkle.onrender.com/api/admin/<ADMIN_ID>"
+              ]
+            },
+            "auth": {
+              "type": "bearer",
+              "bearer": [
+                {
+                  "key": "token",
+                  "value": "<TOKEN>",
+                  "type": "string"
+                }
+              ]
+            }
+          }
+        },
+        {
+          "name": "List Admins",
+          "request": {
+            "method": "GET",
+            "header": [],
+            "url": {
+              "raw": "https://social-feed-inkle.onrender.com/api/admin/list",
+              "host": [
+                "https://social-feed-inkle.onrender.com/api/admin/list"
+              ]
+            },
+            "auth": {
+              "type": "bearer",
+              "bearer": [
+                {
+                  "key": "token",
+                  "value": "<TOKEN>",
+                  "type": "string"
+                }
+              ]
+            }
+          }
+        }
+      ]
+    }
+  ]
+}
