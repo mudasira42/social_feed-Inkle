@@ -104,33 +104,41 @@ exports.deleteLike = async (req, res) => {
 // @access  Private (Owner)
 exports.createAdmin = async (req, res) => {
   try {
-    const { userId } = req.body;
+    const { email } = req.body;
 
-    const user = await User.findById(userId);
+    if (!email) {
+      return res.status(400).json(errorResponse("Email is required"));
+    }
+
+    // Find user by email (case insensitive)
+    const user = await User.findOne({ email: email.toLowerCase() });
 
     if (!user) {
-      return res.status(404).json(errorResponse('User not found'));
+      return res.status(404).json(errorResponse("User not found"));
     }
 
-    if (user.role === 'admin') {
-      return res.status(400).json(errorResponse('User is already an admin'));
+    if (user.role === "ADMIN") {
+      return res.status(400).json(errorResponse("User is already an admin"));
     }
 
-    if (user.role === 'owner') {
-      return res.status(400).json(errorResponse('Cannot change owner role'));
+    if (user.role === "OWNER") {
+      return res.status(400).json(errorResponse("Cannot change owner role"));
     }
 
-    user.role = 'admin';
+    user.role = "ADMIN";
     await user.save();
 
-    // Create activity
-    await ActivityService.createActivity('ADMIN_CREATED', req.user.id, user._id, 'User', {
+    await ActivityService.createActivity("ADMIN_CREATED", req.user.id, user._id, "User", {
       newAdminUsername: user.username
     });
 
-    res.status(200).json(successResponse('Admin created successfully', user));
+    return res.status(200).json(successResponse("Admin created successfully", {
+      id: user._id,
+      email: user.email,
+      role: user.role
+    }));
   } catch (error) {
-    res.status(500).json(errorResponse(error.message));
+    return res.status(500).json(errorResponse(error.message));
   }
 };
 
